@@ -1,0 +1,33 @@
+<ion-header>
+      <ion-navbar color="primary">
+        <ion-title>Course Feedback</ion-title>
+      </ion-navbar>
+</ion-header>
+<ion-content padding>
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>Feedback Form</ion-card-title>        
+        </ion-card-header>
+
+        <ion-card-content>
+          <ion-item>
+            <ion-label floating>Course Name</ion-label>
+            <ion-input type="text" [(ngModel)] ="courseName"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label floating>Course Rating (1-5)</ion-label>
+            <ion-input type="number" [(ngModel)] = "rating"></ion-input>
+          </ion-item>
+          <ion-item>
+            <button ion-button padding (click)="onClick()">Rate</button>
+            <button ion-button padding (click)="onClear()" color="danger">Clear</button>
+          </ion-item>
+        </ion-card-content>
+      </ion-card>
+
+      <ion-card *ngIf="show">
+        <ion-card-content>
+          <b>Course Name: </b>{{courseName}} <b><br>Rating: </b>{{rating}}/5
+        </ion-card-content>
+      </ion-card>
+</ion-content>
